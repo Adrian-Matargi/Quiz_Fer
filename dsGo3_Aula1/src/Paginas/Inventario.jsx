@@ -4,44 +4,64 @@ export function Inventario() {
   const [figurinhas, setFigurinhas] = useState([]);
 
   useEffect(() => {
-    // Carrega o inventário salvo no localStorage ao abrir a página
     const armazenado = JSON.parse(localStorage.getItem("inventario")) || [];
     setFigurinhas(armazenado);
   }, []);
 
-    const limparInventario = () => {
-    // pede confirmação ao usuário
+  const limparInventario = () => {
     if (!window.confirm("Deseja realmente limpar o inventário?")) return;
-
-    // remove o item do localStorage
     localStorage.removeItem("inventario");
-
-    // atualiza o estado local para refletir a limpeza na UI
     setFigurinhas([]);
   };
 
-
   return (
-    <main className="conteiner">
-        <section className="inventario">
-      <h2>Inventário</h2>
-      <button className="limpar-inventario" onClick={limparInventario}>
+    <main
+      className="conteiner"
+      role="main"
+      aria-label="Inventário de figurinhas colecionadas"
+    >
+      <section
+        className="inventario"
+        aria-labelledby="titulo-inventario"
+        aria-live="polite"
+      >
+        <header>
+          <h2 id="titulo-inventario">Inventário</h2>
+          <button
+            className="limpar-inventario"
+            onClick={limparInventario}
+            aria-label="Limpar todas as figurinhas do inventário"
+          >
             Limpar Inventário
           </button>
+        </header>
 
-      {/* Caso o jogador ainda não tenha nenhuma figurinha */}
-      {figurinhas.length === 0 ? (
-        <p className="vazio">Nenhuma figurinha coletada ainda!</p>
-      ) : (
-        <div className="grid">
-          {figurinhas.map((f) => (
-            <div key={f.id} className="figurinha">
-              <img src={f.imagem} alt={f.nome} />
-             
-            </div>
-          ))}
-        </div>
-      )}
+        {figurinhas.length === 0 ? (
+          <p className="vazio" role="status">
+            Nenhuma figurinha coletada ainda!
+          </p>
+        ) : (
+          <ul
+            className="grid"
+            role="list"
+            aria-label="Lista de figurinhas coletadas"
+          >
+            {figurinhas.map((f) => (
+              <li
+                key={f.id}
+                className="figurinha"
+                role="listitem"
+                aria-label={`Figurinha ${f.nome}`}
+              >
+                <img
+                  src={f.imagem}
+                  alt={`Figurinha de ${f.nome}`}
+                  className="figurinha-imagem"
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );
