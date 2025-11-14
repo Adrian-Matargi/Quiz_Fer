@@ -15,18 +15,12 @@ export function Inventario() {
   };
 
   return (
-    <main
-      className="conteiner"
-      role="main"
-      aria-label="Inventário de figurinhas colecionadas"
-    >
-      <section
-        className="inventario"
-        aria-labelledby="titulo-inventario"
-        aria-live="polite"
-      >
+    <main className="conteiner" aria-labelledby="titulo-inventario">
+
+      <section className="inventario">
         <header>
           <h2 id="titulo-inventario">Inventário</h2>
+
           <button
             className="limpar-inventario"
             onClick={limparInventario}
@@ -41,28 +35,21 @@ export function Inventario() {
             Nenhuma figurinha coletada ainda!
           </p>
         ) : (
-          <ul
-            className="grid"
-            role="list"
-            aria-label="Lista de figurinhas coletadas"
-          >
+          <ul className="grid" aria-label="Lista de figurinhas coletadas">
             {figurinhas.map((f) => (
-              <li
-                key={f.id}
-                className="figurinha"
-                role="listitem"
-                aria-label={`Figurinha ${f.nome}`}
-              >
+              <li key={f.id} className="figurinha">
                 <img
                   src={f.imagem}
-                  alt={`Figurinha de ${f.nome}`}
+                  alt={`Figurinha do personagem ${f.nome}`}
                   className="figurinha-imagem"
                 />
               </li>
             ))}
           </ul>
         )}
+
       </section>
+
     </main>
   );
 }

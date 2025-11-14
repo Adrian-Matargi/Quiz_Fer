@@ -5,7 +5,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",    
     descricao: "Pessoal, hoje vai ter prova",    
     respostaCorreta: "Dorival",
-    status: 'disponivel' 
+    status: 'disponivel',
+    figura: '/src/assets/Dori.png' 
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",   
     descricao: "A bola é minha! Essa frase é conhecida por qual professor(a)?",
     respostaCorreta: "Marcia",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/marciaMochila.png'
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",   
     descricao: "O que é um projeto? Qual é o professor que relembra esse conceito todas vezes possíveis?",
     respostaCorreta: "Fernanda",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/ferAvatar'
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",   
     descricao: "Hellllowwwww Sextooouuuuuuuu, é a frase favorita de qual professor?",
     respostaCorreta: "Mariany",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/maryAvatar'
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",   
     descricao: "E agora com vocês .... os patronos do conhecimento... Vocês",
     respostaCorreta: "Israel",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/trofeu.png'
   }
   ,
   {
@@ -46,7 +51,8 @@ export const missoes = [
     missao: "Advinha quem eu sou",   
     descricao: "Tem contraste? tem placeholder?",
     respostaCorreta: "Mariany",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/maryAvatar.png'
   },
   {
     id: 7,
@@ -54,7 +60,8 @@ export const missoes = [
     missao: "O que eu sou?",   
     descricao: "Toda tabela tem?",
     respostaCorreta: "Chave Primaria",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/marciaMochila.png'
   }
   ,
   {
@@ -63,6 +70,7 @@ export const missoes = [
     missao: "O que eu sou?",   
     descricao: "Um codigo de excelecia tem .... code",
     respostaCorreta: "Clean",
-    status: 'disponivel'
+    status: 'disponivel',
+    figura: '/src/assets/'
   }
 ];

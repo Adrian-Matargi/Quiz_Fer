@@ -3,9 +3,15 @@ import { Menu } from '../Componentes/Menu';
 
 export function DSGo() {
   return (
-    <div className="corpo" role="application" aria-label="Aplicativo de Quiz DSGo">
-      {/* Conteúdo principal da página */}
-      <main id="conteudo-principal" aria-live="polite" aria-label="Conteúdo principal">
+    <div className="corpo" role="region" aria-label="Aplicativo de Quiz DSGo">
+      
+      {/* Conteúdo principal */}
+      <main 
+        id="conteudo-principal" 
+        role="main"
+        aria-live="polite" 
+        aria-label="Conteúdo principal"
+      >
         <Outlet />
       </main>
 

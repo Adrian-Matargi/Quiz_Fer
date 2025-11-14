@@ -13,21 +13,12 @@ export function Missao() {
   };
 
   return (
-    <main
-      className="conteiner"
-      role="main"
-      aria-label="Lista de missões disponíveis"
-    >
+    <main className="conteiner" aria-labelledby="titulo-missoes">
       <header>
         <h2 id="titulo-missoes">Missões</h2>
       </header>
 
-      <section
-        className="missoes-grid"
-        role="region"
-        aria-labelledby="titulo-missoes"
-        aria-live="polite"
-      >
+      <section className="missoes-grid" aria-label="Lista de missões disponíveis">
         {missoes.map((m) => (
           <MissaoCard
             key={m.id}
@@ -43,10 +34,6 @@ export function Missao() {
           missao={missaoSelecionada}
           onClose={() => setMissaoSelecionada(null)}
           onConcluir={() => concluirMissao(missaoSelecionada.id)}
-          aria-modal="true"
-          role="dialog"
-          aria-labelledby={`missao-${missaoSelecionada.id}-titulo`}
-          aria-describedby={`missao-${missaoSelecionada.id}-descricao`}
         />
       )}
     </main>

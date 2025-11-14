@@ -7,20 +7,20 @@ export function Inicial() {
   return (
     <main 
       className="inicial" 
-      role="main" 
       aria-label="Tela inicial do aplicativo DS Go"
+      role="main"
     >
       <header>
         <img 
           src={logo} 
           className="logo" 
-          alt="Logo do aplicativo DS Go" 
-          role="img"
+          alt="Logo do aplicativo DS Go"
+          loading="lazy"
         />
       </header>
 
       <section aria-labelledby="titulo-entrada">
-        <h1 id="titulo-entrada" className="sr-only">
+        <h1 id="titulo-entrada">
           Bem-vindo ao DS Go
         </h1>
 
