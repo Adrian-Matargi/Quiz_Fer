@@ -1,68 +1,148 @@
+/* ================================
+   VALORANT THEME – GLOBAL RESET
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --v-red: #ff4655;
+  --v-red-dark: #d63945;
+  --v-bg: #0f1923;
+  --v-bg-light: #16232f;
+  --v-text: #ece8e1;
+  --v-text-dark: #bdb8ad;
+  --v-border: #3a3f47;
+  --v-shadow: rgba(0, 0, 0, 0.35);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  font-family: 'Avenir', 'Roboto', 'Montserrat', system-ui, sans-serif;
+  color: var(--v-text);
+  background-color: var(--v-bg);
 
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* ================================
+   BODY STRUCTURE
+================================ */
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  background-color: var(--v-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ================================
+   HEADERS
+================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--v-text);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem;
 }
+
+h2 {
+  font-size: 2.2rem;
+}
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+  color: var(--v-red);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: var(--v-red-dark);
+}
+
+/* ================================
+   BUTTONS – VALORANT STYLE
+================================ */
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 0.7rem 1.5rem;
+  background: var(--v-bg-light);
+  color: var(--v-text);
+  border: 2px solid var(--v-border);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button:hover {
+  border-color: var(--v-red);
+  color: var(--v-red);
+}
+
+/* Pequeno detalhe de corte na borda — estilo Valorant */
+button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid var(--v-red);
+  border-bottom: 3px solid var(--v-red);
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+/* ================================
+   SCROLLBAR CUSTOM
+================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--v-red);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--v-bg-light);
+}
+
+/* ================================
+   RESPONSIVE BASE
+================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
   }
-  a:hover {
-    color: #747bff;
-  }
+
   button {
-    background-color: #f9f9f9;
+    padding: 0.6rem 1rem;
   }
 }
