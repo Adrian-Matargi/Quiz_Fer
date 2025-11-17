@@ -15,41 +15,34 @@ export function Inventario() {
   };
 
   return (
-    <main className="conteiner" aria-labelledby="titulo-inventario">
+    <main className="inventario">
+      <h2>Inventário</h2>
+      <button 
+        className="limpar-inventario" 
+        onClick={limparInventario}
+        aria-disabled={figurinhas.length === 0}
+      >
+        Limpar Inventário
+      </button>
 
-      <section className="inventario">
-        <header>
-          <h2 id="titulo-inventario">Inventário</h2>
-
-          <button
-            className="limpar-inventario"
-            onClick={limparInventario}
-            aria-label="Limpar todas as figurinhas do inventário"
-          >
-            Limpar Inventário
-          </button>
-        </header>
-
-        {figurinhas.length === 0 ? (
-          <p className="vazio" role="status">
-            Nenhuma figurinha coletada ainda!
-          </p>
-        ) : (
-          <ul className="grid" aria-label="Lista de figurinhas coletadas">
-            {figurinhas.map((f) => (
-              <li key={f.id} className="figurinha">
-                <img
-                  src={f.imagem}
-                  alt={`Figurinha do personagem ${f.nome}`}
-                  className="figurinha-imagem"
-                />
-              </li>
-            ))}
-          </ul>
-        )}
-
-      </section>
-
+      {figurinhas.length === 0 ? (
+        <p className="vazio">Nenhuma figurinha coletada ainda!</p>
+      ) : (
+        <section className="grid" aria-label="Lista de figurinhas coletadas">
+          {figurinhas.map((f) => (
+            <article 
+              key={f.id} 
+              className="figurinha" 
+              aria-labelledby={`figurinha-${f.id}`}
+            >
+              <figure>
+                <img src={f.imagem} alt={f.nome} />
+                <figcaption id={`figurinha-${f.id}`}></figcaption>
+              </figure>
+            </article>
+          ))}
+        </section>
+      )}
     </main>
   );
 }

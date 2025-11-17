@@ -1,36 +1,46 @@
-import { useState } from "react";
-import sucesso from "../assets/win.png";
-import erro from "../assets/raios.png";
+import { useState, useEffect, useRef } from "react";
 
 export function MissaoModal({ missao, onClose, onConcluir }) {
   const [resposta, setResposta] = useState("");
-  const [feedback, setFeedback] = useState(null); // {status, mensagem}
+  const [resultado, setResultado] = useState(null);
+  const [status, setStatus] = useState(null);
+  const inputRef = useRef(null);
+  const dialogRef = useRef(null);
+
+  // Foco inicial no input ao abrir modal
+  useEffect(() => {
+    inputRef.current?.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
 
   const verificarResposta = () => {
-    const normalized = resposta.trim().toLowerCase();
-
-    if (!normalized) {
-      setFeedback({
-        status: "erro",
-        mensagem: "Digite uma resposta antes de enviar!"
-      });
+    if (!resposta.trim()) {
+      alert("Por favor, digite uma resposta antes de enviar!");
       return;
     }
 
-    const correta = missao.respostaCorreta.trim().toLowerCase();
+    if (resposta.trim().toLowerCase() === missao.respostaCorreta.trim().toLowerCase()) {
+      setResultado("Resposta correta! Parabéns!");
+      setStatus("sucesso");
 
-    if (normalized === correta) {
-      setFeedback({
-        status: "sucesso",
-        mensagem: "Resposta correta! Parabéns!"
-      });
-
-      setTimeout(() => onConcluir(missao.id), 1000);
+      // Concluir missão após 1s
+      setTimeout(() => {
+        onConcluir(missao.id);
+      }, 1000);
     } else {
-      setFeedback({
-        status: "erro",
-        mensagem: "Resposta incorreta. Tente novamente!"
-      });
+      setResultado("Resposta incorreta. Tente novamente!");
+      setStatus("erro");
     }
   };
 
@@ -38,47 +48,47 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
     <dialog
       open
       className="modal"
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-labelledby="titulo-missao"
       aria-describedby="descricao-missao"
     >
-      <h2 id="titulo-missao">{missao.titulo}</h2>
+      <h2 className="titulo" id="titulo-missao">
+        {missao.titulo}
+      </h2>
       <p id="descricao-missao">{missao.descricao}</p>
 
       <label htmlFor="resposta" className="sr-only">
         Digite sua resposta
       </label>
-
       <input
+        className="caixaTexto"
         id="resposta"
         type="text"
-        className="caixaTexto"
         placeholder="Digite sua resposta..."
         value={resposta}
         onChange={(e) => setResposta(e.target.value)}
         required
+        ref={inputRef}
       />
 
       <div className="modal-botoes">
-        <button onClick={verificarResposta} aria-label="Enviar resposta da missão">
+        <button onClick={verificarResposta} aria-label="Enviar resposta">
           Enviar
         </button>
-        <button onClick={onClose} aria-label="Fechar modal da missão">
+        <button onClick={onClose} aria-label="Fechar modal">
           Fechar
         </button>
       </div>
 
-      {feedback && (
-        <div role="alert" className="resultado">
-          <p>{feedback.mensagem}</p>
-
-          {feedback.status === "sucesso" && (
-            <img src={sucesso} alt="Missão concluída" width="100" loading="lazy" />
-          )}
-          {feedback.status === "erro" && (
-            <img src={erro} alt="Resposta incorreta" width="100" loading="lazy" />
-          )}
+      {resultado && (
+        <div
+          className="resultado"
+          role="status"
+          aria-live="polite"
+        >
+          <p>{resultado}</p>
         </div>
       )}
     </dialog>
