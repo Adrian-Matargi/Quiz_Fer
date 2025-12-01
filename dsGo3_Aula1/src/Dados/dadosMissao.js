@@ -6,7 +6,7 @@ export const missoes = [
     descricao: "Sou responsável por retornar JSX e montar uma parte da interface. Quem sou eu?",
     respostaCorreta: "Componente",
     status: 'disponivel',
-    figura: '/src/assets/Dori.png' 
+    figura: '/src/assets/skin1.png' 
   },
   {
     id: 2,
