@@ -60,3 +60,12 @@ dialog.modal {
     width: 100px;
   }
 }
+@media (max-width: 768px) {
+  dialog.modal {
+    padding: 1.5rem;
+
+    .caixaTexto {
+      width: 80%;
+    }
+  }
+}

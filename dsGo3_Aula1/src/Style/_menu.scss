@@ -7,8 +7,8 @@
   transform: translateX(-50%);
   width: 90%;
   max-width: 800px;
-
-  background: rgba(0, 0, 0, 0.7);
+  //background: linear-gradient(135deg, #247ba0, #1a4f8a);
+  background: linear-gradient(135deg, #0a1a2f, #123b70);
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -36,12 +36,31 @@
   margin: 0;
   color: white;
   font-size: 1rem;
+  list-style: none;
+  text-decoration: none;
 }
 
 .menu img {
-  width: 60px;
-  height: 60px;
+  width: 102px;
+  height: 62px;
   margin-bottom: 0.5rem;
+}
+
+/*  Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    width: 90%;
+    padding: 0.4rem;
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+
+    figure {
+      font-size: 0.9rem;
+    }
+  }
 }
 
 

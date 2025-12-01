@@ -12,7 +12,10 @@
 
   .vazio {
     font-size: 1.2rem;
-    color: #ccc;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
   /* Grid responsivo para exibir as figurinhas */
@@ -71,22 +74,16 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .inventario {
-    h2 {
-      font-size: 1.2rem;
+    padding: 1rem;
+
+    .grid {
+      gap: 0.5rem;
     }
 
     .figurinha {
-      max-width: 100px;
-
-      img {
-        max-width: 80px;
-      }
-
-      p {
-        font-size: 0.9rem;
-      }
+      padding: 0.8rem;
     }
   }
 }

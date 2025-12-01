@@ -2,37 +2,88 @@ import missao from '../assets/missao_tratado.png';
 import mapa from '../assets/mapa_tratado.png';
 import bau from '../assets/bau_tratado.png';
 import camera from '../assets/camera_tratado.png';
-import { Link } from 'react-router-dom'
-
-const menuItems = [
-  { to: "missao", img: missao, label: "Missões" },
-  { to: null, img: bau, label: "Inventário" },
-  { to: null, img: mapa, label: "GeoLocalização" },
-  { to: null, img: camera, label: "Camera" }
-];
+import { Link } from 'react-router-dom';
 
 export function Menu() {
   return (
-    <div className="menu">
-      <ul>
-        {menuItems.map((item, i) => (
-          <li key={i}>
-            {item.to ? (
-              <Link to={item.to}>
-                <figure>
-                  <img src={item.img} alt={item.label} />
-                  <figcaption>{item.label}</figcaption>
-                </figure>
-              </Link>
-            ) : (
-              <figure>
-                <img src={item.img} alt={item.label} />
-                <figcaption>{item.label}</figcaption>
-              </figure>
-            )}
-          </li>
-        ))}
+    <nav
+      className="menu"
+      role="navigation"
+      aria-label="Menu principal do jogo DS GO"
+    >
+      <ul className="menu-list">
+        <li>
+          <Link
+            to="missao"
+            aria-label="Ir para a página de Missões"
+            className="menu-item"
+          >
+            <figure>
+              <img
+                src={missao}
+                alt="Ícone de missões"
+                role="img"
+                aria-hidden="true"
+              />
+              <figcaption>Missões</figcaption>
+            </figure>
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="inventario"
+            aria-label="Ir para o inventário de figurinhas"
+            className="menu-item"
+          >
+            <figure>
+              <img
+                src={bau}
+                alt="Ícone de inventário"
+                role="img"
+                aria-hidden="true"
+              />
+              <figcaption>Inventário</figcaption>
+            </figure>
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="geolocalizacao"
+            aria-label="Abrir mapa de geolocalização"
+            className="menu-item"
+          >
+            <figure>
+              <img
+                src={mapa}
+                alt="Ícone de geolocalização"
+                role="img"
+                aria-hidden="true"
+              />
+              <figcaption>GeoLocalização</figcaption>
+            </figure>
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="camera"
+            aria-label="Abrir câmera"
+            className="menu-item"
+          >
+            <figure>
+              <img
+                src={camera}
+                alt="Ícone de câmera"
+                role="img"
+                aria-hidden="true"
+              />
+              <figcaption>Câmera</figcaption>
+            </figure>
+          </Link>
+        </li>
       </ul>
-    </div>
+    </nav>
   );
 }

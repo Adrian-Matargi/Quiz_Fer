@@ -1,13 +1,12 @@
-$fundo: #04010f;
+$fundo: #000000;
 $claro: #f0ebeb;
 $card:#dcdff2;
 $sombrasBox: 0 4px 10px rgba(0, 0, 0, 0.3);
-$destaque-rosa: #ff3d7f transparent;
-$gradiente-rosa: linear-gradient(135deg, #2f1048, #e4018d);
+$destaque-rosa: #ff1744;
+$gradiente-rosa: linear-gradient(135deg, #cc0000, #660000);//botao iniciar missao
 $foco: #4c0f32;
-$botao-azul: linear-gradient(135deg, #2cd0e5, #2553af);
-$botao-vermelho: linear-gradient(135deg, #ff4655, #b3202e);
-$botao-amarelo: linear-gradient(135deg, #b9820b, #ede203);
+$botao-vermelho: linear-gradient(135deg, #ff1e1e, #b30000);
+$botao-vermelho-escuro: linear-gradient(135deg, #cc0000, #660000);
 $box-fundo: rgba(0, 0, 0, 0.8);
 $borda: 1px solid $fundo;
 
@@ -24,7 +23,6 @@ body {
   height: 100vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
-
 }
 
 /* BOTÃO */

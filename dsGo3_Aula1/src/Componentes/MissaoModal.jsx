@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
+import sucesso from "../assets/dsGo/win.png";
+import erro from "../assets/dsGo/errou.png";
+
 export function MissaoModal({ missao, onClose, onConcluir }) {
   const [resposta, setResposta] = useState("");
   const [resultado, setResultado] = useState(null);
@@ -89,6 +92,20 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
           aria-live="polite"
         >
           <p>{resultado}</p>
+          {status === "sucesso" && (
+            <img
+              src={sucesso}
+              alt="Missão concluída com sucesso"
+              width="100"
+            />
+          )}
+          {status === "erro" && (
+            <img
+              src={erro}
+              alt="Erro na resposta da missão"
+              width="100"
+            />
+          )}
         </div>
       )}
     </dialog>
