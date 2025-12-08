@@ -17,8 +17,9 @@ export function Inventario() {
   return (
     <main className="inventario">
       <h2>Inventário</h2>
-      <button 
-        className="limpar-inventario" 
+
+      <button
+        className="limpar-inventario"
         onClick={limparInventario}
         aria-disabled={figurinhas.length === 0}
       >
@@ -30,14 +31,19 @@ export function Inventario() {
       ) : (
         <section className="grid" aria-label="Lista de figurinhas coletadas">
           {figurinhas.map((f) => (
-            <article 
-              key={f.id} 
-              className="figurinha" 
+            <article
+              key={f.id}
+              className="figurinha"
               aria-labelledby={`figurinha-${f.id}`}
             >
               <figure>
-                <img src={f.imagem} alt={f.nome} />
-                <figcaption id={`figurinha-${f.id}`}></figcaption>
+                <img
+                  src={f.figura}
+                  alt={f.nome || `Figurinha ${f.id}`}
+                />
+                <figcaption id={`figurinha-${f.id}`}>
+                  {f.nome || `Figurinha ${f.id}`}
+                </figcaption>
               </figure>
             </article>
           ))}

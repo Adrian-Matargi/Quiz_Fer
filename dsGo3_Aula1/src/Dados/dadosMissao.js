@@ -6,7 +6,7 @@ export const missoes = [
     descricao: "Sou responsável por retornar JSX e montar uma parte da interface. Quem sou eu?",
     respostaCorreta: "Componente",
     status: 'disponivel',
-    figura: '/src/assets/skin1.png' 
+    figura: '/src/assets/skin1.png'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const missoes = [
     descricao: "Sou usado para armazenar valores que mudam durante a execução do componente.",
     respostaCorreta: "useState",
     status: 'disponivel',
-    figura: '/src/assets/marciaMochila.png'
+    figura: '/src/assets/skin2.png'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const missoes = [
     descricao: "Sou executado automaticamente quando o componente monta ou quando estados mudam. Quem sou eu?",
     respostaCorreta: "useEffect",
     status: 'disponivel',
-    figura: '/src/assets/ferAvatar'
+    figura: '/src/assets/skin3.png'
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const missoes = [
     descricao: "Qual hook usamos para mudar de página programaticamente?",
     respostaCorreta: "useNavigate",
     status: 'disponivel',
-    figura: '/src/assets/maryAvatar'
+    figura: '/src/assets/skin4.png'
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const missoes = [
     descricao: "Sou o mecanismo pelo qual um componente pai envia dados para um componente filho.",
     respostaCorreta: "Props",
     status: 'disponivel',
-    figura: '/src/assets/trofeu.png'
+    figura: '/src/assets/skin5.png'
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const missoes = [
     descricao: "Sou a sintaxe que mistura JavaScript com HTML dentro do React.",
     respostaCorreta: "JSX",
     status: 'disponivel',
-    figura: '/src/assets/maryAvatar.png'
+    figura: '/src/assets/skin6.png'
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const missoes = [
     descricao: "Ao renderizar listas com .map(), qual atributo é obrigatório em cada item?",
     respostaCorreta: "Key",
     status: 'disponivel',
-    figura: '/src/assets/marciaMochila.png'
+    figura: '/src/assets/skin7.png'
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const missoes = [
     descricao: "Em React, como chamamos trechos de código reutilizáveis e bem organizados?",
     respostaCorreta: "Componentes",
     status: 'disponivel',
-    figura: '/src/assets/'
+    figura: '/src/assets/skin8.png'
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const missoes = [
     descricao: "Sou o valor que, quando alterado, força a interface a re-renderizar.",
     respostaCorreta: "Estado",
     status: 'disponivel',
-    figura: '/src/assets/Dori.png'
+    figura: '/src/assets/skin9.png'
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const missoes = [
     descricao: "Qual evento usamos para detectar cliques em React?",
     respostaCorreta: "onClick",
     status: 'disponivel',
-    figura: '/src/assets/marciaMochila.png'
+    figura: '/src/assets/skin10.png'
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const missoes = [
     descricao: "Sou usado para memorizar valores e evitar cálculos desnecessários.",
     respostaCorreta: "useMemo",
     status: 'disponivel',
-    figura: '/src/assets/ferAvatar'
+    figura: '/src/assets/skin11.png'
   },
   {
     id: 12,
@@ -105,6 +105,6 @@ export const missoes = [
     descricao: "Componente responsável por exibir rotas filhas em um layout com rotas aninhadas.",
     respostaCorreta: "Outlet",
     status: 'disponivel',
-    figura: '/src/assets/maryAvatar'
+    figura: '/src/assets/skin12.png'
   }
 ];
